@@ -5,6 +5,7 @@ local HttpService = game:GetService("HttpService")
 
 local GameIds = {
     [125887922175287] = "Race A Brainrot",
+    [11708967881] = "Yeet A Friends",
 }
 
 local GameName = GameIds[game.PlaceId] or "Universal"
@@ -14,6 +15,7 @@ local ModuleSource = "Embedded"
 do
     local GAME_TO_SCRIPT = {
         [125887922175287] = "c7665207a93320f3c77ae1a0ec174cfc",
+        [11708967881] = "9f2ffeb1fc1decfb3af26133b5a958c3",
     }
     local STORAGE_FILE = "GalaxyHubKey.txt"
     local KEY_URL = "https://ads.luarmor.net/get_key?for=Galaxy_Hub-jXWGLsIDEaFX"
