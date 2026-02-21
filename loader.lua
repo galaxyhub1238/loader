@@ -40,7 +40,7 @@ local Config = {
         },
         [129315204746120] = {
             name = "Escape Quicksand for Brainrots",
-            scriptId = "b0cd5707076edaacacbbd373f0770264",
+            scriptId = "6ef57bb8be96a0ebda87df91de041b28",
         },
     },
 }
