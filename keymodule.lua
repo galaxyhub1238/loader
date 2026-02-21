@@ -121,12 +121,19 @@ function M.Validate(key)
             M.Notify({ Title = "Success", Content = (status.message or "Key is valid") .. extra, Duration = 5 })
         end
         return true
+    elseif status.code == "KEY_HWID_LOCKED" then
+        M.DeleteSavedKey()
+        if M.Notify then M.Notify({ Title = "HWID Locked", Content = "Key linked to a different HWID. Please reset it.", Duration = 5 }) end
+        return false
+    elseif status.code == "KEY_INCORRECT" then
+        M.DeleteSavedKey()
+        if M.Notify then M.Notify({ Title = "Invalid Key", Content = "Key is wrong or deleted!", Duration = 5 }) end
+        return false
     else
         M.DeleteSavedKey()
         if M.Notify then
-            local fallback = "Key validation failed"
-            local msg = status.message or fallback
-            M.Notify({ Title = "Error", Content = msg, Duration = 5 })
+            local fallback = "Key validation failed: " .. tostring(status.message or "Unknown")
+            M.Notify({ Title = "Error: " .. tostring(status.code), Content = fallback, Duration = 5 })
         end
         return false
     end
