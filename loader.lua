@@ -14,14 +14,14 @@ local KeyModule = {}
 local ModuleSource = "Embedded"
 do
     local GAME_TO_SCRIPT = {
-        [125887922175287] = "c7665207a93320f3c77ae1a0ec174cfc",
-        [11708967881] = "9f2ffeb1fc1decfb3af26133b5a958c3",
+        [6137321701] = "01709abfe8c48853d9e91bc4fe1c5e8a",
+        [6348640020] = "01709abfe8c48853d9e91bc4fe1c5e8a",
     }
     local STORAGE_FILE = "GalaxyHubKey.txt"
-    local KEY_URL = "https://ads.luarmor.net/get_key?for=Galaxy_Hub-jXWGLsIDEaFX"
+    local KEY_URL = "https://ads.luarmor.net/get_key?for=Galaxy_Hub-XPfsiYNlVWIO"
     local LIB_URL = "https://sdkapi-public.luarmor.net/library.lua"
 
-    KeyModule.ScriptID = GAME_TO_SCRIPT[game.PlaceId] or "e875a9abc2005dd220616ad2d265e2b9"
+    KeyModule.ScriptID = GAME_TO_SCRIPT[game.PlaceId] or print("Universal Script is not avaible yet.")
     KeyModule.MainWindow = nil
     KeyModule.Notify = nil
     KeyModule._api = nil
