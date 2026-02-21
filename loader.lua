@@ -39,7 +39,7 @@ local Config = {
             scriptId = "01709abfe8c48853d9e91bc4fe1c5e8a",
         },
         [129315204746120] = {
-            name = "Jump To Steal Brainrot",
+            name = "Escape Quicksand for Brainrots",
             scriptId = "b0cd5707076edaacacbbd373f0770264",
         },
     },
