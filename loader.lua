@@ -266,6 +266,30 @@ local State = {
     savedKeyFound = false,
 }
 
+local function get_executor_name()
+    if type(identifyexecutor) ~= "function" then
+        return "Unknown Executor"
+    end
+
+    local ok, executorName = safe_call(identifyexecutor)
+    if ok and type(executorName) == "string" and executorName ~= "" then
+        return executorName
+    end
+
+    return "Unknown Executor"
+end
+
+local function get_unsupported_executor_name(executorName)
+    local value = string.lower(tostring(executorName or ""))
+    if string.find(value, "xeno", 1, true) then
+        return "Xeno"
+    end
+    if string.find(value, "solara", 1, true) then
+        return "Solara"
+    end
+    return nil
+end
+
 local Window = WindUI:CreateWindow({
     Title = "Galaxy Hub Key System",
     Author = "Galaxy Hub",
@@ -275,6 +299,48 @@ local Window = WindUI:CreateWindow({
 
 KeyModule.MainWindow = Window
 KeyModule.Notify = notify
+
+local function show_executor_warning_if_needed()
+    local executorName = get_executor_name()
+    local unsupported = get_unsupported_executor_name(executorName)
+    if not unsupported then
+        return
+    end
+
+    local warningText = "You may experience severe stability issues while using " .. unsupported .. ". Some UI and script features may fail or behave unexpectedly."
+
+    local okDialog, dialog = safe_call(function()
+        return Window:Dialog({
+            Icon = "alert-triangle",
+            Title = "Executor Compatibility Warning",
+            Content = warningText,
+            Buttons = {
+                {
+                    Title = "Continue",
+                    Variant = "Primary",
+                    Callback = function()
+                    end,
+                },
+            },
+        })
+    end)
+
+    if okDialog and dialog and dialog.Show then
+        safe_call(function()
+            dialog:Show()
+        end)
+        return
+    end
+
+    notify({
+        Title = "Executor Compatibility Warning",
+        Content = warningText,
+        Duration = 8,
+        Icon = "alert-triangle",
+    })
+end
+
+show_executor_warning_if_needed()
 
 local Tab = Window:Tab({
     Title = "Key System",
