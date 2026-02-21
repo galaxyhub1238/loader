@@ -4,8 +4,8 @@ local Players = game:GetService("Players")
 local HttpService = game:GetService("HttpService")
 
 local GameIds = {
-    [125887922175287] = "Race A Brainrot",
-    [11708967881] = "Yeet A Friends",
+    [6348640020] = "Blair",
+    [6137321701] = "Blair",
 }
 
 local GameName = GameIds[game.PlaceId] or "Universal"
