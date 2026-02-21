@@ -1,7 +1,8 @@
 local M = {}
 
 local GAME_TO_SCRIPT = {
-    [125887922175287] = "c7665207a93320f3c77ae1a0ec174cfc",
+    [6137321701] = "01709abfe8c48853d9e91bc4fe1c5e8a",
+    [6348640020] = "01709abfe8c48853d9e91bc4fe1c5e8a",
 }
 
 local STORAGE_FILE = "GalaxyHubKey.txt"
