@@ -5,9 +5,7 @@ local GAME_TO_SCRIPT = {
 }
 
 local STORAGE_FILE = "GalaxyHubKey.txt"
-local KEY_URL = "https://ads.luarmor.net/get_key?for=Galaxy_Hub-jXWGLsIDEaFX
-
-"
+local KEY_URL = "https://ads.luarmor.net/get_key?for=Galaxy_Hub-XPfsiYNlVWIO"
 local LIB_URL = "https://sdkapi-public.luarmor.net/library.lua"
 
 M.ScriptID = GAME_TO_SCRIPT[game.PlaceId] or "e875a9abc2005dd220616ad2d265e2b9"
