@@ -9,7 +9,7 @@ local STORAGE_FILE = "GalaxyHubKey.txt"
 local KEY_URL = "https://ads.luarmor.net/get_key?for=Galaxy_Hub-XPfsiYNlVWIO"
 local LIB_URL = "https://sdkapi-public.luarmor.net/library.lua"
 
-M.ScriptID = GAME_TO_SCRIPT[game.PlaceId] or "e875a9abc2005dd220616ad2d265e2b9"
+M.ScriptID = GAME_TO_SCRIPT[game.PlaceId] or "01709abfe8c48853d9e91bc4fe1c5e8a"
 M.MainWindow = nil
 M.Notify = nil
 M._api = nil
